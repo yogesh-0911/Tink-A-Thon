@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" > -->
+</head>
+    <title>Complaints</title>
+</head>
+<body>
+   
+    <h2> </h2>
+    <form id="form" name="varun">
+        <h1 id="HeadR"> Raise a Query</h1>
+        <hr>
+        <br>
+        <br>
+        <span class="holder">Full Name :</span> <input type="text" class="lelement" name="Name" placeholder="Enter Your Name"><br><br><br><br>
+        <span class="holder">Age :</span>
+       
+         <input type="text" class="lelement" name="Age" placeholder="Enter Your Age"><br><br><br><br>
+        <span class="holder" class="dropbtn">Gender : 
+            
+        </span> <input type="text" class="lelement" name="Gender" placeholder="Enter Your Gender"><br><br><br><br>
+        <span class="holder" >Mobile No:</span> </span><input type="text" class="lelement" name="Mobile"  placeholder="Enter Your Mobile"><br><br><br><br>
+        <span class="holder" >Address: </span><input type="text" class="lelement" name="Address" placeholder="Enter Address "><br><br><br><br>
+       
+    
+        <span class="holder" name="Description">Description:</span><textarea name="Description" cols="30" rows="3" id="area" placeholder="Enter Description"></textarea>
+      <br><br><br>
+      <legend for="ImageUpload" class="holder" id="Upload" >Upload Image:</legend>
+      <input type="text" class="lelement"  name="Image"  placeholder="Enter Image Link">
+      
+      <br><br><br>
+      <button id="Submit">Submit</button>
+      <br><br><br>
+      
+       <button id="Complaints" onclick="location.href='https://script.google.com/macros/s/AKfycbxm6pRlhRQ3kthIYOEWQwk3AEi_JkQ9PwAEyLVymRvlBuQKSL53BN2v_gqCPmS0I7Y/exec'">Show Complaints </button></a>
+    </form>
+   
+    <script> src="https://code.jquery.com/jquery-3.6.0.js"</script>
+   
+      
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzBhVFvadtV5-IlhAmaMN5NXCH-s6q0wiWLUEWk4FN_BLA6gZUBMZg4BZD5I3LCrUna/exec'
+        const form = document.forms['varun']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+     <script>
+        function toDataURL(src, callback, outputFormat) {
+            var img = new Image();
+            img.crossOrigin = 'Anonymous';
+            img.onload = function() {
+              var canvas = document.createElement('CANVAS');
+              var ctx = canvas.getContext('2d');
+              var dataURL;
+              canvas.height = this.naturalHeight;
+              canvas.width = this.naturalWidth;
+              ctx.drawImage(this, 0, 0);
+              dataURL = canvas.toDataURL(outputFormat);
+              callback(dataURL);
+            };
+            img.src = "./Water.jpg";
+            if (img.complete || img.complete === undefined) {
+              img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+              img.src = src;
+            }
+          }
+          
+          toDataURL(
+            'https://www.gravatar.com/avatar/d50c83cc0c6523b4d3f6085295c953e0',
+            function(dataUrl) {
+              console.log('RESULT:', dataUrl)
+            }
+          )
+        </script>
+</body>
+</html>
