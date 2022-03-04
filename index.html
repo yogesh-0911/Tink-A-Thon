@@ -109,6 +109,9 @@
       </p>
     </div>
 
+
+<div class="weathercard">
+    <h1>IRRIGATION PREDICTOR</h1>
     <div class="farmer">
         <div class='box'>
             <div class='wave -one'></div>
@@ -125,25 +128,69 @@
           <img src="farmer.png" alt="">
 
     </div>
+  </div>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="foot1">
-        <button class="foot-btn" id="download-btn"
-            onclick="window.location.href='https://github.com/yogesh-0911'">
-            Contact Us
-        </button>
-        <button class="foot-btn" id="submit-btn"
-            onclick="window.location.href='#'">
-            Privacy Policy
-        </button>
-        <button class="foot-btn" id="view-btn"
-            onclick="window.location.href='https://en.wikipedia.org/wiki/Water_conservation'">
-            Useful links
-        </button>
-    </div>
-   
+
+
+  <footer class=" text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example2" class="form-control" placeholder="Email Address" />
+              <!-- <label class="form-label" for="form5Example2">Email address</label> -->
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <!-- Copyright -->
 </footer>
+<!-- End of .container -->
+    
+
+
+
+
+<script>
+  $(function () {
+    $(document).scroll(function () {
+      var $nav = $("#mainnav");
+      $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+    });
+  });
+</script>
 
 
     <script src="script.js"></script>
@@ -164,3 +211,4 @@
     ></script>
   </body>
 </html>
+
